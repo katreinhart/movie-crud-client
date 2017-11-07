@@ -4,6 +4,9 @@ const baseURL = window.location.href.includes('127.0.0.1') ? localhostURL : hero
 const mainContent = document.getElementById('main-content')
 const windowHash = window.location.hash.split('/').splice(1)
 
+const navBar = document.getElementById('navbar')
+navBar.innerHTML = navbar()
+
 switch (windowHash[0]) {
   case "":  
     indexView.init()
