@@ -9,11 +9,17 @@ switch (windowHash[0]) {
     indexView.init()
     break
   case "movies":
-    const id = windowHash[1]
+    let id = windowHash[1]
     if(id !== "")
       movieView.init(id)
     else  
       indexView.init()
+    break
+  case "new": 
+    createFormView.init()
+    break
+  case "edit":
+    editFormView.init(windowHash[1])
     break
   default:
     indexView.init()

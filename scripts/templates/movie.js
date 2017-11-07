@@ -1,14 +1,26 @@
 const movieTemplate = (movie) => {
-  const { title, director, year, your_rating, poster_url } = movie
+  const { id, title, director, year, your_rating, poster_url } = movie
   const show = document.createElement('DIV')
   show.classList += 'container'
+
   const home = document.createElement('A')
   home.textContent = 'Home'
   home.href = "#"
   home.addEventListener('click', e => {
+    e.preventDefault()
     indexView.init()
   })
   show.appendChild(home)
+
+  const editLink = document.createElement('A')
+  editLink.href = `#/edit/${id}`
+  editLink.textContent = "Edit"
+  editLink.addEventListener('click', e => {
+    e.preventDefault()
+    editFormView.init(id)
+  })
+  show.appendChild(editLink)
+
   const h3 = document.createElement('H3')
   h3.textContent = title
   const h4 = document.createElement('h4')

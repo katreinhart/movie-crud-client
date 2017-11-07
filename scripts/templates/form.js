@@ -1,4 +1,5 @@
 const formTemplate = (method, movie={ id: '', title:'', director: '', year: '', your_rating: '', poster_url: ''}) => {
+  console.log(movie.title)
   const btnText = method === 'POST' ? 'Add New Movie' : 'Update Movie'
   return `
     <form id="post-form" action="/movies/${movie.id}">
