@@ -3,18 +3,20 @@ const movieTemplate = (movie) => {
   const show = document.createElement('DIV')
   show.classList += 'container'
 
-  const home = document.createElement('A')
-  home.textContent = 'Home'
-  home.href = "#"
-  home.addEventListener('click', e => {
+  const homeLink = document.createElement('A')
+  homeLink.textContent = 'Home'
+  homeLink.href = "#"
+  homeLink.className = "home-link"
+  homeLink.addEventListener('click', e => {
     e.preventDefault()
     indexView.init()
   })
-  show.appendChild(home)
+  show.appendChild(homeLink)
 
   const editLink = document.createElement('A')
   editLink.href = `#/edit/${id}`
   editLink.textContent = "Edit"
+  editLink.className = "edit-link"
   editLink.addEventListener('click', e => {
     e.preventDefault()
     editFormView.init(id)
@@ -24,17 +26,20 @@ const movieTemplate = (movie) => {
   const deleteLink = document.createElement('A')
   deleteLink.href = `#/delete/${id}`
   deleteLink.textContent = "Delete"
+  deleteLink.className = "delete-link"
   deleteLink.addEventListener('click', e => {
     e.preventDefault()
     Movie.destroy(id).then(result => {
       indexView.init()
-    }).catch(error => {
-      console.log('someting went wrong')
     })
   })
   
   show.appendChild(deleteLink)
 
+  let stars = ''
+  for(let i=0; i<your_rating; i++) {
+    stars += '⭐'
+  }
   const h3 = document.createElement('H3')
   h3.textContent = `${title}`
   const h4 = document.createElement('h4')
@@ -42,10 +47,11 @@ const movieTemplate = (movie) => {
   const p1 = document.createElement('p')
   p1.textContent = `Release date: ${year}`
   const p2 = document.createElement('p')
-  p2.textContent = `My rating: ${your_rating}`
+  p2.textContent = `My rating: ${stars}`
   const img = document.createElement('img')
   img.src = poster_url
-  img.width = 200
+  img.class ="movie-poster"
+  img.width = 250
 
   show.appendChild(h3)
   show.appendChild(h4)

@@ -22,6 +22,13 @@ a:hover, a:active {
 
 h1, h2, h3, h4, h5 {
   font-family: 'Audiowide';
+  text-align: center;
+  clear: both;
+}
+
+img.movie-poster {
+  align-items: center;
+  justify-content: center;
 }
 
 .list-group-item {
@@ -34,6 +41,7 @@ a.list-group-item:hover {
 
 p, a {
   font-family: 'Ubuntu' !important;
+  font-weight: 700;
 }
 
 nav.navbar-dark{
@@ -45,4 +53,23 @@ a.navbar-brand {
 }
 a.navbar-brand:hover {
   color: #FF52A2 !important;
+}
+
+a.home-link {
+  float: left;
+}
+
+a.edit-link {
+  float: left;
+  padding-left: 10px;
+}
+
+a.delete-link {
+  float: right;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    background-color: #BADA55;
+  }
 }

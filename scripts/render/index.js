@@ -6,7 +6,7 @@ window.indexView = {
       .then((result) => {
         const { movies } = result.data
         const template = indexTemplate(movies)
-        mainContent.innerHTML = ''
+        mainContent.innerHTML ='<h3>My Favorite Sci-Fi Movies</h3>'
         mainContent.appendChild(template)
       })
   }
