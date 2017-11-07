@@ -7,6 +7,7 @@ const indexTemplate = (movies) => {
     a.textContent = movie.title
     a.href = `#/movies/${movie.id}`
     ul.appendChild(a)
+    a.addEventListener('click', e => window.movieView.init(movie.id))
   })
   return ul
 }
