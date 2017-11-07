@@ -68,8 +68,19 @@ a.delete-link {
   float: right;
 }
 
+h3.page-title {
+  margin: 20px 0;
+}
+
 @media screen and (min-width: 768px) {
   body {
-    background-color: #BADA55;
+    
+  }
+  .container {
+    max-width: 800px;
+  }
+  h3.page-title {
+    margin: 40px 0;
+    font-size: 3rem;
   }
 }
