@@ -32,6 +32,7 @@ const movieTemplate = (movie) => {
       console.log('someting went wrong')
     })
   })
+  
   show.appendChild(deleteLink)
 
   const h3 = document.createElement('H3')

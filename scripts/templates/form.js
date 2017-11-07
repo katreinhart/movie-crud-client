@@ -1,6 +1,8 @@
 const formTemplate = (method, movie={ id: '', title:'', director: '', year: '', your_rating: '', poster_url: ''}) => {
   const btnText = method === 'POST' ? 'Add New Movie' : 'Update Movie'
   return `
+  <div>
+    <a href="#" id="cancel">Cancel</a>
     <form id="post-form" action="/movies/${movie.id}">
       <div class="form-group">
         <label for="movieTitle">Title</label>
@@ -29,5 +31,6 @@ const formTemplate = (method, movie={ id: '', title:'', director: '', year: '', 
       </div>
       <button type="submit" class="btn btn-info btn-block">${btnText}</button>
     </form>
+  </div>
     `
 }

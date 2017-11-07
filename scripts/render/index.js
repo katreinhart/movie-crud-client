@@ -1,6 +1,7 @@
 window.indexView = {
   init() {
-    // window.location.hash = '#'
+    navBarView.init()    
+    window.location.hash = '#'
     Movie.index()
       .then((result) => {
         const { movies } = result.data
