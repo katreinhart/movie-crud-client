@@ -21,6 +21,19 @@ const movieTemplate = (movie) => {
   })
   show.appendChild(editLink)
 
+  const deleteLink = document.createElement('A')
+  deleteLink.href = `#/delete/${id}`
+  deleteLink.textContent = "Delete"
+  deleteLink.addEventListener('click', e => {
+    e.preventDefault()
+    Movie.destroy(id).then(result => {
+      indexView.init()
+    }).catch(error => {
+      console.log('someting went wrong')
+    })
+  })
+  show.appendChild(deleteLink)
+
   const h3 = document.createElement('H3')
   h3.textContent = `${title}`
   const h4 = document.createElement('h4')
