@@ -22,9 +22,9 @@ const movieTemplate = (movie) => {
   show.appendChild(editLink)
 
   const h3 = document.createElement('H3')
-  h3.textContent = title
+  h3.textContent = `${title}`
   const h4 = document.createElement('h4')
-  h4.textContent = director
+  h4.textContent = `${director}`
   const p1 = document.createElement('p')
   p1.textContent = `Release date: ${year}`
   const p2 = document.createElement('p')
