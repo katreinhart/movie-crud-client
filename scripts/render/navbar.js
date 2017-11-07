@@ -1,7 +1,7 @@
 window.navBarView = {
   init() {
     const title = document.getElementsByTagName('title')[0]
-    title.textContent = "Movie CRUD"
+    title.textContent = "Kat's Sci-Fi Movie Database"
 
     const navBar = document.getElementById('navbar')
     navBar.innerHTML = navbar()

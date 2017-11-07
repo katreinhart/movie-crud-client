@@ -1,5 +1,5 @@
 const localhostURL = 'http://localhost:3000/movies'
-const herokuURL = ''
+const herokuURL = 'https://kat-scifi-db.herokuapp.com/movies'
 const baseURL = window.location.href.includes('127.0.0.1') ? localhostURL : herokuURL
 const mainContent = document.getElementById('main-content')
 const windowHash = window.location.hash.split('/').splice(1)
